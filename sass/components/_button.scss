@@ -1,0 +1,139 @@
+/** Pseudo class: a special name for a selector, to style element under special condition;
+If not styled, the link will have a default style. */
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none; /* To clear underline*/
+        padding: 1.5rem 4rem; /* padding: top and bottom; left and right*/
+        /* Change an inline element to an inline block so that it could have its own space*/
+        display:inline-block;
+        border-radius: 10rem;
+        transition: all .2s; /* All the properties are enabled to be animated */
+        position: relative;
+        
+        //Change for the <button> element
+        /* border: none;
+        cursor: pointer; */
+    }
+
+    &:hover {
+        transform: translateY(-3px); /* Negative value: to go up */
+        box-shadow: 0 1rem 2rem rgba($color-black,.2); /* box-shadow: X Y Blur Color */
+
+        /* To show the after effects after hovering on the button */
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6); /* To increase the element's scale in X and Y direction*/
+
+            /**Remember to add 'transition' property to the initial state*/
+    
+            /* To fade sth out */
+            opacity: 0;
+        }
+    }
+
+    /* Effects after click */
+    &:active, &:focus {
+        outline: none;
+        transform: translateY(-.1rem); /* In relation to the initial link state */
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+    }
+
+    &-white {
+        background-color: $color-white;
+        color:$color-grey-dark;
+
+        /* Nesting in a nested element */
+        &::after {
+            background:$color-white;
+        }
+    }
+
+    &-green {
+        background-color: $color-primary;
+        color: $color-white;
+
+        /* Nesting in a nested element */
+        &::after {
+            background:$color-primary;
+        }
+    }
+
+    /**Pseudo elements: style certain parts of an element */
+    &::after { 
+        /* ':: after' 
+        is a virtual element after the element we select
+        is like a child of the button element
+        looks exactly like the button*/
+
+        content: ""; /* It's always necessary to make sure it appears*/
+        display: inline-block; /* Because the button is an inline block*/
+        height: 100%; /* In relation to the button*/
+        width: 100%;
+        border-radius: 10rem;
+
+        /* To put it behind the button*/
+        position: absolute; /* Remember to set the 'position:relative' to &*/
+        top: 0;
+        left: 0;
+        z-index: -1; /* Define the layer of an element*/
+    
+        /* To enable the transform animation transition of the after effects*/
+        transition:all 0.4s; 
+    }
+
+    /* Create the animation for the specific button*/
+    &-animated {
+        animation: moveInButton .5s ease-out .75s; /* shorthand: animation: name; duration; timing-function; delay*/
+    
+        /* To prevent the button becomes visible before animation happens */
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        color:$color-primary;
+        display:inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        transition: all .2s; /* All the properties are enabled to be animated */
+
+        /* @include respond (tab-port) {
+            margin-top: 5rem;
+        } */
+    }
+
+    &:hover {
+        transform: translateY(-3px); /* Negative value: to go up */
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);  /*box-shadow: X Y Blur Color */
+        color: $color-white;
+        background:$color-primary;
+    }
+
+    /* Effects after click */
+    &:active{
+        transform: translateY(-.1rem); /* In relation to the initial link state */
+        box-shadow: 0 .5rem 1rem rgba($color-black,.2);
+    }
+
+}
+
+.btn-margin {
+    margin-top: 5rem;
+}
+
+.btn-centered {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.btn-narrow {
+    /* width: 30%;
+    height: 20rem; */
+    padding: 1.1rem 4.6rem !important;
+
+}
