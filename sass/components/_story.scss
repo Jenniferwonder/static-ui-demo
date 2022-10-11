@@ -1,0 +1,102 @@
+.story {
+	/* To position the background video*/
+	position: relative;
+
+	/* To position the story section */
+	padding: 2rem 0 15rem 0;
+
+	/* To position the the story card*/
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	&__card {
+		width: 75%;
+		margin: 4rem 0;
+
+		box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+		background-color: rgba($color-white, 0.6);
+		border-radius: 3px;
+
+		padding: 6rem;
+		font-size: $default-font-size;
+
+		/* To create a parallelogram shape card */
+		transform: skewX(-12deg);
+
+		@include respond(phone) {
+			transform: skewX(0);
+			width: 90%;
+		}
+
+		&-photo {
+			width: 15rem;
+			height: 15rem;
+			border-radius: 50%;
+
+			/* To position the text around the photo*/
+			float: left;
+			shape-outside: circle(50% at 50% 50%);
+			-webkit-shape-outside: circle(50% at 50% 50%);
+
+			// Define shape of the photo img
+			clip-path: circle(50% at 50% 50%);
+			-webkit-clip-path: circle(50% at 50% 50%);
+
+			/* To position the photo image and name */
+			position: relative;
+
+			/* To hide the overflow image */
+			overflow: hidden;
+
+			transform: translateX(-3rem) skewX(12deg);
+
+			@include respond(phone) {
+				transform: skewX(0);
+			}
+		}
+
+		&-img {
+			height: 100%;
+			// border-radius: 50%;
+
+			transform: translateX(-4rem) scale(1.4);
+			backface-visibility: hidden;
+			transition: all 0.5s;
+		}
+
+		&-name {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, 20%);
+
+			color: $color-white;
+			text-transform: uppercase;
+			font-size: 1.7rem;
+			text-align: center;
+
+			opacity: 0;
+			transition: all 0.5s;
+			backface-visibility: hidden;
+		}
+
+		&:hover &-name {
+			opacity: 1;
+			transform: translate(-50%, -50%);
+		}
+
+		&:hover &-img {
+			transform: translateX(-4rem) scale(1);
+			filter: blur(3px) brightness(80%);
+		}
+
+		&-review {
+			transform: skewX(12deg);
+			@include respond(phone) {
+				transform: skewX(0);
+			}
+		}
+	}
+}
