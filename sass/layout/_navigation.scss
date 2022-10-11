@@ -18,6 +18,8 @@
 	}
 
 	//FUNCTIONALITY
+
+	// Use general sibling selector '~'
 	&__checkbox:checked ~ &__background {
 		transform: scale(80);
 	}

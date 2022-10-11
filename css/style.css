@@ -439,6 +439,77 @@ If not styled, the link will have a default style. */
   .popup__close:hover {
     color: #55c57a; }
 
+.story {
+  /* To position the background video*/
+  position: relative;
+  /* To position the story section */
+  padding: 2rem 0 15rem 0;
+  /* To position the the story card*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+  .story__card {
+    width: 75%;
+    margin: 4rem 0;
+    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 3px;
+    padding: 6rem;
+    font-size: 1.6rem;
+    /* To create a parallelogram shape card */
+    transform: skewX(-12deg); }
+    @media only screen and (max-width: 37.5em) {
+      .story__card {
+        transform: skewX(0);
+        width: 90%; } }
+    .story__card-photo {
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      /* To position the text around the photo*/
+      float: left;
+      shape-outside: circle(50% at 50% 50%);
+      -webkit-shape-outside: circle(50% at 50% 50%);
+      clip-path: circle(50% at 50% 50%);
+      -webkit-clip-path: circle(50% at 50% 50%);
+      /* To position the photo image and name */
+      position: relative;
+      /* To hide the overflow image */
+      overflow: hidden;
+      transform: translateX(-3rem) skewX(12deg); }
+      @media only screen and (max-width: 37.5em) {
+        .story__card-photo {
+          transform: skewX(0); } }
+    .story__card-img {
+      height: 100%;
+      transform: translateX(-4rem) scale(1.4);
+      backface-visibility: hidden;
+      transition: all 0.5s; }
+    .story__card-name {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 20%);
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 1.7rem;
+      text-align: center;
+      opacity: 0;
+      transition: all 0.5s;
+      backface-visibility: hidden; }
+    .story__card:hover .story__card-name {
+      opacity: 1;
+      transform: translate(-50%, -50%); }
+    .story__card:hover .story__card-img {
+      transform: translateX(-4rem) scale(1);
+      filter: blur(3px) brightness(80%); }
+    .story__card-review {
+      transform: skewX(12deg); }
+      @media only screen and (max-width: 37.5em) {
+        .story__card-review {
+          transform: skewX(0); } }
+
 .header {
   height: 95vh;
   /* padding-bottom: 3rem; */
@@ -504,7 +575,7 @@ If not styled, the link will have a default style. */
         outline-offset: 2rem;
         /* To create a border around the photo*/
         z-index: 10;
-        transition: all .2s;
+        transition: all 0.2s;
         /* To create a smooth animation effects */ }
         @media only screen and (max-width: 56.25em) {
           .description__detail-gallery-photo {
@@ -527,11 +598,11 @@ If not styled, the link will have a default style. */
           @media only screen and (max-width: 56.25em) {
             .description__detail-gallery-photo--p2 {
               top: -5rem;
-              right: .5vw; } }
+              right: 0.5vw; } }
           @media only screen and (max-width: 37.5em) {
             .description__detail-gallery-photo--p2 {
               top: -3rem;
-              right: .5vw; } }
+              right: 0.5vw; } }
         .description__detail-gallery-photo--p3 {
           /* position: absolute; */
           top: -5rem;
@@ -596,12 +667,12 @@ If not styled, the link will have a default style. */
         padding: 1rem; } }
   .feature__card {
     background-color: #f7f7f7;
-    opacity: .8;
+    opacity: 0.8;
     width: 24rem;
     height: 31rem;
     margin-bottom: 2rem;
-    margin-left: .5rem;
-    margin-right: .5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     /* shadow settings */
     box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.3);
     border-radius: 3px;
@@ -613,7 +684,7 @@ If not styled, the link will have a default style. */
     /* display: block;
         text-align: center; */
     /* Enable smooth animation effects of the child elements*/
-    transition: all .5s; }
+    transition: all 0.5s; }
     @media only screen and (max-width: 75em) {
       .feature__card {
         width: 35vw; } }
@@ -627,7 +698,7 @@ If not styled, the link will have a default style. */
     .feature__card-icon {
       width: 25%;
       stroke: #f7f7f7;
-      stroke-width: .8px;
+      stroke-width: 0.8px;
       fill: url(#my-cool-gradient) #55c57a; }
       .feature__card-icon-compass {
         stroke: #f7f7f7;
@@ -753,74 +824,6 @@ If not styled, the link will have a default style. */
     .menu__card-back {
       transform: rotateY(180deg); }
 
-.story {
-  /* To position the background video*/
-  position: relative;
-  /* To position the story section */
-  padding: 2rem 0 15rem 0;
-  /* To position the the story card*/
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; }
-  .story__card {
-    width: 70%;
-    margin: 4rem 0;
-    box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 3px;
-    padding: 1vh .5vw;
-    font-size: 1.6rem;
-    /* To create a parallelogram shape card */
-    transform: skewX(-12deg); }
-    @media only screen and (max-width: 37.5em) {
-      .story__card {
-        transform: skewX(0);
-        width: 90%; } }
-    .story__card-photo {
-      width: 15rem;
-      height: 15rem;
-      border-radius: 50%;
-      /* To position the the photo container*/
-      float: left;
-      /* To position the photo image and name */
-      position: relative;
-      /* To hide the overflow image */
-      overflow: hidden;
-      transform: translateX(-3rem) skewX(12deg); }
-      @media only screen and (max-width: 37.5em) {
-        .story__card-photo {
-          transform: skewX(0); } }
-    .story__card-img {
-      height: 100%;
-      border-radius: 50%;
-      transform: translateX(-4rem) scale(1.4);
-      backface-visibility: hidden;
-      transition: all .5s; }
-    .story__card-name {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, 20%);
-      color: #fff;
-      text-transform: uppercase;
-      font-size: 1.7rem;
-      text-align: center;
-      opacity: 0;
-      transition: all .5s;
-      backface-visibility: hidden; }
-    .story__card:hover .story__card-name {
-      opacity: 1;
-      transform: translate(-50%, -50%); }
-    .story__card:hover .story__card-img {
-      transform: translateX(-4rem) scale(1);
-      filter: blur(3px) brightness(80%); }
-    .story__card-review {
-      transform: skewX(12deg); }
-      @media only screen and (max-width: 37.5em) {
-        .story__card-review {
-          transform: skewX(0); } }
-
 .book {
   /* Style the section container background and position*/
   padding: 15rem 0;
@@ -878,7 +881,7 @@ If not styled, the link will have a default style. */
       border-bottom: 3px solid transparent;
       /* To create a transparent bottom border */
       display: block;
-      transition: all .3s; }
+      transition: all 0.3s; }
       .book__form-input:focus {
         outline: none;
         box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
