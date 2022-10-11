@@ -1,0 +1,40 @@
+.features {
+    /* background-color: $color-grey-light-2; */
+
+    grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+
+    display: grid; /* Create sub-column */
+    /* grid-template-columns: repeat(3, 1fr); */
+
+    /* Create responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(25rem,1fr));
+
+    grid-gap: 6rem;
+
+    align-items: start; /* Default setting <stretch>*/
+
+}
+
+.feature {
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-column-gap: 2.5rem;
+
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1 / span 2; /* '/-1' Only works for last explicit grid */
+        grid-gap: 1.5rem;
+
+        /* To center the icon with the title */
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+}
