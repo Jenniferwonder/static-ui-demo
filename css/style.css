@@ -365,7 +365,7 @@ If not styled, the link will have a default style. */
   height: 100%;
   width: 100%;
   z-index: -1;
-  opacity: .15;
+  opacity: 0.15;
   overflow: hidden; }
   .bg-video__content {
     height: 100%;
@@ -645,7 +645,7 @@ If not styled, the link will have a default style. */
   /*display: block; */ }
   .feature > * {
     transform: skewY(7deg);
-    /* Make sure the elements inside are positioned straightly */ }
+    /* Make sure the elements inside are positioned straight */ }
   .feature__box {
     display: flex;
     align-items: center;
