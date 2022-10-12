@@ -12,8 +12,11 @@
 	background-position: center;
 
 	display: grid;
-	grid-template-rows: 1fr min-content 6rem 1fr;
-	grid-template-columns: max-content;
+	grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+	grid-template-columns: minmax(
+		min-content,
+		max-content
+	); // To make the column responsive to different viewport
 	row-gap: 1.5rem;
 	justify-content: center;
 
@@ -53,9 +56,14 @@
 		grid-template-columns: repeat(4, 1fr);
 		column-gap: 3rem;
 		justify-items: center;
+		align-items: center;
 
 		img {
-			height: 2.5rem;
+			// To make the img responsive to different viewport
+			max-height: 2.5rem;
+			max-width: 100%;
+
+			// To make img darker
 			filter: brightness(70%);
 		}
 	}
