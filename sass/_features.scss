@@ -1,0 +1,45 @@
+.features {
+	/* background-color: $color-grey-light-2; */
+
+	grid-column: center-start / center-end;
+
+	margin: 15rem 0;
+
+	display: grid; /* Create sub-column */
+	/* grid-template-columns: repeat(3, 1fr); */
+
+	/* Create responsive grid */
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+
+	grid-gap: 6rem;
+
+	align-items: start; /*
+    align-item: control alignment of grid items inside grid cells
+    Default setting <stretch>*/
+}
+
+// Reusable components
+.feature {
+	display: grid;
+
+	// Define the grid for each feature card
+	grid-template-columns: min-content 1fr;
+	grid-column-gap: 2.5rem;
+
+	&__icon {
+		fill: $color-primary;
+		width: 4.5rem;
+		height: 4.5rem;
+		grid-row: 1 / span 2; /* 
+        '/-1' Only works for last explicit grid row or column 
+        span 2: make sure the icon occupies the last/second row*/
+		grid-gap: 1.5rem;
+
+		/* To center the icon with the title */
+		transform: translateY(-1rem);
+	}
+
+	&__text {
+		font-size: 1.7rem;
+	}
+}
