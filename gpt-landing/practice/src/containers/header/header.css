@@ -1,0 +1,115 @@
+.header {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	/* flex-wrap: wrap; */
+	/* justify-content: space-between; */
+}
+.header__info {
+	/* flex: 1; */
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding-top: 6rem;
+}
+.header__info_heading {
+	font-size: 6rem;
+	font-weight: 800;
+	line-height: 7.5rem; /* 120.968% */
+	letter-spacing: -2.48px;
+	width: 95%;
+}
+.header__info_desc {
+	color: var(--color-text);
+	font-size: 2rem;
+	font-weight: 400;
+	margin-top: 3rem;
+	width: 90%;
+	/* width: 55rem; */
+	/* height: 22.7rem; */
+}
+.header__info_form {
+	display: flex;
+	margin-top: 4rem;
+}
+.header__info_form input {
+	border-radius: 5px 0px 0px 5px;
+	background-color: var(--color-bg-input);
+	padding: 1rem 2rem;
+	height: 5rem;
+	width: 45rem;
+	margin: 0;
+}
+.header__info_form input::placeholder {
+	color: var(--color-text-dark);
+}
+
+.header__info_form button {
+	border-radius: 0px 5px 5px 0px;
+	/* padding: 1rem 2rem; */
+	width: 15rem;
+	height: 5rem;
+	margin: 0;
+}
+.header__info_users {
+	display: flex;
+	align-items: center;
+	margin-top: 4rem;
+}
+.header__info_users img {
+	width: 18.2rem;
+	height: 3.8rem;
+	margin-right: 1rem;
+}
+.header__info_users-desc {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+.header__img {
+	flex: 1;
+	/* width: 55%; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -4rem;
+	margin-right: -8rem;
+}
+.header__img img {
+	/* width: 66.8rem; */
+	/* height: 70.2rem; */
+	width: 100%;
+	/* height: 100%; */
+}
+@media screen and (max-width: 1050px) {
+	.header {
+		flex-direction: column;
+	}
+	.header__info {
+		width: 100%;
+		padding-top: 2rem;
+	}
+	.header__info_heading {
+		font-size: 5rem;
+		width: 100%;
+		letter-spacing: -2px;
+	}
+	.header__img {
+		margin-top: 5rem;
+		margin-right: 0;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	.header__info_heading {
+		font-size: 4rem;
+		width: 100%;
+		line-height: 5.5rem; /* 120.968% */
+		letter-spacing: -2px;
+	}
+	.header__img {
+		margin-top: 3rem;
+		margin-right: 0;
+	}
+}
