@@ -12,7 +12,7 @@
 	font-size: 24px;
 	font-style: normal;
 	font-weight: 800;
-	line-height: 75px; /* 312.5% */
+	line-height: 6rem;
 	letter-spacing: -0.96px;
 }
 .feature__text {
@@ -20,4 +20,15 @@
 	font-size: 1.6rem;
 	font-weight: 500;
 	line-height: 30px; /* 187.5% */
+}
+
+@media screen and (max-width: 1140px) {
+	.feature__text {
+		font-size: 1.5rem;
+	}
+}
+@media screen and (max-width: 1055px) {
+	.feature__text {
+		font-size: 1.8rem;
+	}
 }
