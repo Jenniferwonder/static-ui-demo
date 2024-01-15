@@ -1,0 +1,41 @@
+.features {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+/* *Left Container* */
+.features__left {
+	display: flex;
+	flex-direction: column;
+	width: 44%;
+	margin-right: 5rem;
+}
+.feature__heading {
+	font-size: 3.4rem;
+	margin-bottom: 5rem;
+}
+/* *Right Container* */
+.features__right {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+.features__right .feature {
+	margin-bottom: 3rem;
+	padding-top: 1rem;
+	/* justify-content: space-between; */
+}
+.features__right .feature .feature__title {
+	width: 18.2rem;
+	margin-right: 5rem;
+}
+.features__right .feature .feature__title h1 {
+	font-size: 1.8rem;
+	line-height: 2.4rem;
+	letter-spacing: -0.72px;
+}
+.features__right .feature .feature__text {
+	font-size: 1.4rem;
+	line-height: 2.4rem;
+	width: 33.4rem;
+}

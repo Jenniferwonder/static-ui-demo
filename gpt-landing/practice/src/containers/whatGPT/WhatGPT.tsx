@@ -4,7 +4,7 @@ import "./whatGPT.css";
 
 export default function WhatGPT() {
 	return (
-		<div className="whatgpt section__padding section__margin">
+		<div className="whatgpt section__padding section__margin" id="WhatGPT">
 			<div className="whatgpt__top-container">
 				<Feature
 					title="What is GPT-3"
