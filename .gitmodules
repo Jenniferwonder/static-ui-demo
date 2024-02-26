@@ -1,0 +1,18 @@
+[submodule "forkify"]
+	path = forkify
+	url = https://github.com/Jenniferwonder/forkify.git
+[submodule "Static-ui-app-f"]
+	path = Static-ui-app-f
+	url = https://github.com/Jenniferwonder/Portfolio-v1.git
+[submodule "Static-ui-app/portfolio-v1"]
+	path = Static-ui-app/portfolio
+	url = https://github.com/Jenniferwonder/portfolio-v1.git
+[submodule "Static-ui-app/nexter-homepage"]
+	path = Static-ui-app/nexter-homepage
+	url = https://github.com/Jenniferwonder/nexter-homepage.git
+[submodule "Static-ui-app/natours-homepage"]
+	path = Static-ui-app/natours-homepage
+	url = https://github.com/Jenniferwonder/natours-homepage.git
+[submodule "Static-ui-app/simple-portfolio"]
+	path = Static-ui-app/simple-portfolio
+	url = https://github.com/Jenniferwonder/simple-portfolio.git
